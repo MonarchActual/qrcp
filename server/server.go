@@ -79,7 +79,7 @@ func (s *Server) DisplayQR(url string) {
 	openBrowser(s.BaseURL + PATH)
 }
 
-// Wait for transfer to be completed, it waits forever if kept awlive
+// Wait for transfer to be completed, it waits forever if kept alive
 func (s Server) Wait() error {
 	<-s.stopChannel
 	if err := s.instance.Shutdown(context.Background()); err != nil {
