@@ -265,7 +265,7 @@ func Wizard(app application.App) error {
 			Validate: pathIsReadableFile,
 		}
 		if promptTlsCertString, err := promptTlsCert.Run(); err == nil {
-			v.Set("tlsCert", util.Expand(promptTlsCertString))
+			v.Set("tls-cert", util.Expand(promptTlsCertString))
 		}
 		// TLS key
 		promptTlsKey := promptui.Prompt{
@@ -274,7 +274,7 @@ func Wizard(app application.App) error {
 			Validate: pathIsReadableFile,
 		}
 		if promptTlsKeyString, err := promptTlsKey.Run(); err == nil {
-			v.Set("tlsKey", util.Expand(promptTlsKeyString))
+			v.Set("tls-key", util.Expand(promptTlsKeyString))
 		}
 	}
 	validateIsDir := func(input string) error {
